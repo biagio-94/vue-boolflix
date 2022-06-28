@@ -25,6 +25,10 @@ export default {
         .then((value)=>{
             state.testArray=value.data.results
         })
+        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=c47fc9efae23d89f94e602631b3ba67e&query=${this.testoInserito}`)
+        .then((value)=>{
+            state.testArraySeries=value.data.results
+        })
       
     },
   },
