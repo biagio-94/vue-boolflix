@@ -7,8 +7,8 @@
         <h3><strong>Titolo Originale:</strong> {{ value.original_title }}</h3>
         <img
           :src="`http://image.tmdb.org/t/p/w500/${value.poster_path}`"
-           onerror="javascript:this.src='img/error.webp'"
-           height="500"
+          onerror="javascript:this.src='img/error.webp'"
+          height="500"
           alt=""
         />
         <div v-if="value.original_language">
@@ -21,20 +21,26 @@
               alt=""
               onerror="javascript:this.src='img/error.webp'"
             />
-            Voto:{{ value.vote_average }}</span
+          </span>
+          <span class="ms-3">Vote:</span>
+          <span
+            v-for="(star, i) in getStars(value.vote_average)"
+            :key="star + i"
           >
+            <i class="fa-solid fa-star"></i>
+          </span>
         </div>
       </li>
     </ul>
     <ul>
-      <h1 >Serie TV:</h1>
+      <h1>Serie TV:</h1>
       <li v-for="(value, i) in visualizzaArrayStoreSerieTV" :key="value + i">
         <h2><strong>Titolo:</strong> {{ value.name }}</h2>
         <h3><strong>Titolo Originale:</strong> {{ value.original_name }}</h3>
         <img
           :src="`http://image.tmdb.org/t/p/w500/${value.poster_path}`"
-           onerror="javascript:this.src='img/error.webp'"
-           height="500"
+          onerror="javascript:this.src='img/error.webp'"
+          height="500"
           alt=""
         />
         <div v-if="value.original_language">
@@ -47,8 +53,14 @@
               alt=""
               onerror="javascript:this.src='img/error.webp'"
             />
-            Voto:{{ value.vote_average }}</span
+          </span>
+          <span class="ms-3">Vote:</span>
+          <span
+            v-for="(star, i) in getStars(value.vote_average)"
+            :key="star + i"
           >
+            <i class="fa-solid fa-star"></i>
+          </span>
         </div>
       </li>
     </ul>
@@ -64,6 +76,11 @@ export default {
     },
     visualizzaArrayStoreSerieTV() {
       return state.testArraySeries;
+    },
+  },
+  methods: {
+    getStars(value) {
+      return Math.round(value / 2);
     },
   },
 };
