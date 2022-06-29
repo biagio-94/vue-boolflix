@@ -1,0 +1,32 @@
+{
+    "users": [
+        {
+            "user_id":0,
+            "user_FirstName":"Biagio",
+            "user_LastName":"Ferro",
+            "user_email":"ferro.biagio@gmail.com",
+            "user_password":"randomBiagio"
+        },
+        {
+            "user_id":1,
+            "user_FirstName":"Alice",
+            "user_LastName":"Caiola",
+            "user_email":"AliceCaiola@gmail.com",
+            "user_password":"randomAlice"
+        },
+        {
+            "user_id":2,
+            "user_FirstName":"Silvia",
+            "user_LastName":"Settimia",
+            "user_email":"SettimiaSilvia@gmail.com",
+            "user_password":"randomSilvia"
+        },
+        {
+            "user_id":3,
+            "user_FirstName":"Giuseppe",
+            "user_LastName":"Principato",
+            "user_email":"giuseppe.principato@gmail.com",
+            "user_password":"randomGiuseppe"
+        }
+    ]
+}

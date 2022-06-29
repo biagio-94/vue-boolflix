@@ -1,5 +1,9 @@
 <template>
   <div class="d-flex">
+    <div class="search-bar">
+      <input type="text" v-model="testoInserito" />
+    <button class="btn btn-danger" @click="uploadmyStore()">OK</button>
+    </div>
     <ul>
       <h1>Film:</h1>
       <li v-for="(value, i) in visualizzaArrayStore" :key="value + i">
@@ -68,6 +72,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import { state } from "../store";
 export default {
   computed: {
@@ -97,6 +102,18 @@ export default {
         }
     }
   },
+  watch:{
+    state: function(){
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c47fc9efae23d89f94e602631b3ba67e&query=${state.testoDaRicercare}`)
+        .then((value)=>{
+            state.testArray=value.data.results
+        })
+        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=c47fc9efae23d89f94e602631b3ba67e&query=${state.testoDaRicercare}`)
+        .then((value)=>{
+            state.testArraySeries=value.data.results
+        })
+    }
+  }
 };
 </script>
 
