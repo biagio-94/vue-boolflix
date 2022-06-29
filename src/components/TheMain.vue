@@ -19,7 +19,7 @@
           <span
             >Lingua:
             <img
-              :src="`https://flagcdn.com/16x12/${returnflag(value.original_language)}.png`"
+              :src="`https://flagcdn.com/16x12/${value.original_language}.png`"
               width="16"
               height="12"
               alt=""
@@ -51,7 +51,7 @@
           <span
             >Lingua:
             <img
-              :src="`https://flagcdn.com/16x12/${returnflag(value.original_language)}.png`"
+              :src="`https://flagcdn.com/16x12/${value.original_language}.png`"
               width="16"
               height="12"
               alt=""
@@ -116,20 +116,6 @@ export default {
     getStars(value) {
       return Math.round(value / 2);
     },
-    returnflag(value){
-        if(value=="en"){
-            return "gb-eng"
-        }
-        else if(value=="ja"){
-            return "jp"
-        }
-        else if(value=="ko"){
-            return "kr"
-        }
-        else{
-            return value
-        }
-    }
   },
  /*  watch:{
     testoInserito: function(){
