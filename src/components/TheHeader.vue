@@ -70,13 +70,13 @@
 
 <script>
 import axios from "axios";
-import { state } from "../store";
+
 export default {
   data() {
     return {
       userEmail: "",
       userPassword: "",
-      testoInserito: "",
+      
       displayLogIn: true,
       databaseUsers:[]
     };
@@ -86,12 +86,7 @@ export default {
   },
 
   methods: {
-    uploadmyStore() {
-      state.userlog = false;
-      if (this.testoInserito.length >= 0) {
-        state.testoDaRicercare = this.testoInserito;
-      }
-    },
+    
     changeInterface() {
       this.displayLogIn = false;
     },

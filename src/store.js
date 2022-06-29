@@ -2,9 +2,9 @@ import Vue from "vue";
 
 export const state=Vue.observable({
     testArray:[],
-    testoDaRicercare:"",
+    testoDaRicercare:"futuro",
     testArraySeries:[],
-    userlog:true,
+    userlog:false,
     
 })
 

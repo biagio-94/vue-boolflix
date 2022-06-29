@@ -75,6 +75,21 @@
 import axios from "axios";
 import { state } from "../store";
 export default {
+  data() {
+    return {
+      testoInserito: "",
+    }
+  },
+  mounted() {
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c47fc9efae23d89f94e602631b3ba67e&query=${state.testoDaRicercare}`)
+        .then((value)=>{
+            state.testArray=value.data.results
+        })
+         axios.get(`https://api.themoviedb.org/3/search/tv?api_key=c47fc9efae23d89f94e602631b3ba67e&query=${state.testoDaRicercare}`)
+        .then((value)=>{
+            state.testArraySeries=value.data.results
+        })
+  },
   computed: {
     visualizzaArrayStore() {
       return state.testArray;
@@ -84,6 +99,20 @@ export default {
     },
   },
   methods: {
+    uploadmyStore() {
+      state.userlog = false;
+      if (this.testoInserito.length >= 0) {
+        state.testoDaRicercare = this.testoInserito;
+      }
+       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c47fc9efae23d89f94e602631b3ba67e&query=${state.testoDaRicercare}`)
+        .then((value)=>{
+            state.testArray=value.data.results
+        })
+         axios.get(`https://api.themoviedb.org/3/search/tv?api_key=c47fc9efae23d89f94e602631b3ba67e&query=${state.testoDaRicercare}`)
+        .then((value)=>{
+            state.testArraySeries=value.data.results
+        })
+    },
     getStars(value) {
       return Math.round(value / 2);
     },
@@ -102,8 +131,8 @@ export default {
         }
     }
   },
-  watch:{
-    state: function(){
+ /*  watch:{
+    testoInserito: function(){
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c47fc9efae23d89f94e602631b3ba67e&query=${state.testoDaRicercare}`)
         .then((value)=>{
             state.testArray=value.data.results
@@ -113,7 +142,7 @@ export default {
             state.testArraySeries=value.data.results
         })
     }
-  }
+  } */
 };
 </script>
 
