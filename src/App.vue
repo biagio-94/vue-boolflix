@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <TheHeader v-if="headerVisualiza"></TheHeader>
-    <TheMain v-else></TheMain>
+    <TheHeader></TheHeader>
+    <TheMain></TheMain>
   </div>
 </template>
 
