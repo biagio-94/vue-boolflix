@@ -9,7 +9,7 @@
       </div>
       <div class="search-bar">
         <input type="text" @change="uploadmyStore()" v-model="testoInserito" />
-        
+        <h6 class="text-white">press enter</h6>
       </div>
     </div>
   </nav>
