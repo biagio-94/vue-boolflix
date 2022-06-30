@@ -1,27 +1,28 @@
 <template>
   <div class="main-background">
-    <div class="row ">
-      <h1>Film</h1>
-      <div
-        v-for="(value, i) in visualizzaArrayStore"
-        :key="value + i"
-        class="col-3"
-      >
-        <CardofDFilm :myProps="value"></CardofDFilm>
+    <div class="container">
+      <div class="row mygap">
+        <h1 class="text-white">Film</h1>
+        <div
+          v-for="(value, i) in visualizzaArrayStore"
+          :key="value + i"
+          class="col-3"
+        >
+          <CardofDFilm :myProps="value"></CardofDFilm>
+        </div>
+      </div>
+      <div class="row mygap mt-5">
+        <h1 class="text-white">Serie TV</h1>
+        <div
+          v-for="(value, i) in visualizzaArrayStoreSerieTV"
+          :key="value + i"
+          class="col-3"
+        >
+          <CardofSeries :myProps="value"></CardofSeries>
+        </div>
       </div>
     </div>
-    <div class="row ">
-      <h1>Serie TV</h1>
-      <div
-        v-for="(value, i) in visualizzaArrayStoreSerieTV"
-        :key="value + i"
-        class="col-3"
-      >
-        <CardofSeries :myProps="value"></CardofSeries>
-      </div>
-    </div>
-
-    <!--  <ul>
+  <!--    <ul>
       <h1>Film:</h1>
       <li v-for="(value, i) in visualizzaArrayStore" :key="value + i">
         <h2><strong>Titolo:</strong> {{ value.title }}</h2>
@@ -128,9 +129,7 @@ export default {
     },
   },
   methods: {
-    getStars(value) {
-      return Math.round(value / 2);
-    },
+    
   },
   /*  watch:{
     testoInserito: function(){
@@ -150,5 +149,8 @@ export default {
 <style lang="scss">
 .main-background {
   background-color: #434343;
+}
+.mygap {
+  row-gap: 2rem;
 }
 </style>
