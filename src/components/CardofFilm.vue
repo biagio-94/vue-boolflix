@@ -22,13 +22,16 @@
       </span>
       <p class="mt-2"><strong>Overview: </strong>: {{ myProps.overview }}</p>
       <h6>Actor:</h6>
-      <p v-for="name in actorNames" :key="name.id + `ciao`" class="mt-2">
-        <strong>{{ name.name }}</strong>
+      <p class="mt-2">
+        <strong v-for="(name, i) in actorNames" :key="name.id + `ciao`"
+          ><span v-if="i < actorNames.length - 1">{{ name.name }}, </span>
+          <span v-else>{{ name.name }}</span></strong
+        >
       </p>
       <h6>Generi:</h6>
       <p class="mt-2">
         <strong v-for="(name, i) in generi" :key="i + `ciao`"
-          ><span v-if="i < generi.length-1">{{ name.name }}, </span>
+          ><span v-if="i < generi.length - 1">{{ name.name }}, </span>
           <span v-else>{{ name.name }}</span></strong
         >
       </p>
